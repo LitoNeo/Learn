@@ -11,3 +11,4 @@ pycharm 不会自动导入系统的环境变量,需要单独进行设置
 2. 直接在pycharm中设置
 
 > 好像是在Run->Debug->Edit Configuration->Configuration->Environment variable中添加PYTHONPATH变量，加入ros相关路径。没试过.
+

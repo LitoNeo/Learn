@@ -22,6 +22,8 @@
 ##### 关于父进程是否等待子进程完成:
 
 ```python
+import subprocess
+
 child = subprocess.call(command)
 child.wait()	# 如果不添加child.wait(),父进程将继续执行下去,而不等待子进程完成
 print "child process finished"
