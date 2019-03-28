@@ -20,7 +20,7 @@ Ubuntu 16.04 自带有 protobuf 2.6.1版本，如果想兼容的话按照下面�
 1）建议将protobuf安装在/usr/protobuf下。请先在/usr下新建一个名为protobuf的文件夹，此即为最终的安装路径。
 
 `sudo mkdir /usr/protobuf`
-2）执行以下命令：（执行下面第一句话时若不成功，则需要安装automake工具）
+2）执行以下命令：（执行下面第一句话时若不成功，则需要安装automake工具--`sudo apt-get install autoconf`即可）
 
 ```
 ./autogen.sh
@@ -39,13 +39,13 @@ sudo make install
 ```
 ####### add protobuf lib path ########
 #(动态库搜索路径) 程序加载运行期间查找动态链接库时指定除了系统默认路径之外的其他路径
-`export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/protobuf/lib/`
+`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/protobuf/lib/`
 #(静态库搜索路径) 程序编译期间查找动态链接库时指定查找共享库的路径
-`export LIBRARY_PATH=\$LIBRARY_PATH:/usr/protobuf/lib/`
+`export LIBRARY_PATH=$LIBRARY_PATH:/usr/protobuf/lib/`
 #执行程序搜索路径
-`export PATH=\$PATH:/usr/protobuf/bin/`
+`export PATH=$PATH:/usr/protobuf/bin/`
 #c程序头文件搜索路径
-`export C_INCLUDE_PATH=\$C_INCLUDE_PATH:/usr/protobuf/include/`
+`export C_INCLUDE_PATH=$C_INCLUDE_PATH:/usr/protobuf/include/`
 #c++程序头文件搜索路径
 `export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/protobuf/include/`
 #pkg-config 路径
@@ -114,7 +114,7 @@ $ make install
 在终端输入
 
 ```
-$ protoc --version1
+$ protoc --version
 ```
 
 能查看到版本信息，输入which protoc能查看到安装路径。
